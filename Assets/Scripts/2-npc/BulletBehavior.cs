@@ -17,9 +17,12 @@ public class BulletBehavior : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("___OnCollisionEnter___");
+
         // If the bullet hits the player, reduce the player's health.
         if (collision.gameObject.CompareTag("Player"))
         {
+             Debug.Log("___if___");
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
 

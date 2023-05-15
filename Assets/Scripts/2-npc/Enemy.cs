@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System;
 
 
 /**
@@ -7,6 +8,9 @@ using UnityEngine.AI;
  */
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy: MonoBehaviour {
+
+    public event Action OnEnemyDestroyed; // New event
+
 
     [Tooltip("The object that this enemy chases after")] [SerializeField]
     GameObject player = null;
@@ -75,5 +79,11 @@ public class Enemy: MonoBehaviour {
 
     public bool IsShooting() {
         return isShooting;
+    }
+
+    private void OnDestroy()
+    {
+        // Trigger the OnEnemyDestroyed event when the enemy is destroyed
+        OnEnemyDestroyed?.Invoke();
     }
 }
