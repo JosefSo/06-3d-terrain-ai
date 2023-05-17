@@ -1,5 +1,7 @@
 # Unity week 6: Three-dimensional scene-building and navigation
 
+https://elonnyosef.itch.io/assignment8
+
 A project with step-by-step scenes illustrating how to construct a 3D game, including:
 
 * Scene modelling with Terrain Tools and ProGrids;
